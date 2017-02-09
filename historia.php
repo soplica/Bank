@@ -26,7 +26,7 @@ if(!isset($_SESSION['zalogowano'])) header('Location: index.php');
 		$zapytanie = $polaczenie->query("SELECT * FROM transakcje WHERE konto_odb = $nr_konta OR konto_nad = $nr_konta ORDER BY data_transakcji DESC");
 		$ilosc_wynikow = $zapytanie->num_rows;
 		
-		echo '<table><tr style="background-color: #f7d2d5"><td width="40px">ID</td>	<td width="80px">Data</td>	<td width="70px">Kwota</td><td width="50px">Waluta</td>	<td width="70px">Saldo przed transakcją</td>		<td width="70px">Saldo po transakcji</td>		<td width="70px">Nadawca</td>	<td width="70px">Odbiorca</td>	<td width="70px">Typ</td></tr></br>';
+		echo '<table border="1px"><tr><td width="40px">ID</td>	<td width="80px">Data</td>	<td width="70px">Kwota</td><td width="50px">Waluta</td>	<td width="70px">Saldo przed transakcją</td>		<td width="70px">Saldo po transakcji</td>		<td width="70px">Nadawca</td>	<td width="70px">Odbiorca</td>	<td width="70px">Typ</td></tr></br>';
 		
 		for($i=0; $i<$ilosc_wynikow; $i++)
 		{
@@ -43,18 +43,15 @@ if(!isset($_SESSION['zalogowano'])) header('Location: index.php');
 		$konto_odb = $dane['konto_odb'];
 		$konto_nad = $dane['konto_nad'];
 		
-		if($i%2==0) $color = '#ede8f4';
-		else $color = '#f7f7f7';
-		
 			if($konto_nad == $nr_konta)
 			{
 			
-				echo "<tr style=\"background-color:".$color.";\"><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota_transakcji</td><td>$waluta</td><td>$saldo_nad_przed</td><td>$saldo_nad_po</td><td>$konto_nad</td><td>$konto_odb</td><td>Wychodzące</td></tr>";
+				echo "<tr><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota_transakcji</td><td>$waluta</td><td>$saldo_nad_przed</td><td>$saldo_nad_po</td><td>$konto_nad</td><td>$konto_odb</td><td>Wychodzące</td></tr>";
 			}
 			
 			if($konto_odb == $nr_konta)
 			{
-				echo "<tr style=\"background-color:".$color.";\">><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota_transakcji</td><td>$waluta</td><td>$saldo_odb_przed</td><td>$saldo_odb_po</td><td>$konto_nad</td><td>$konto_odb</td><td>Przychodzące</td></tr>";
+				echo "<tr><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota_transakcji</td><td>$waluta</td><td>$saldo_odb_przed</td><td>$saldo_odb_po</td><td>$konto_nad</td><td>$konto_odb</td><td>Przychodzące</td></tr>";
 				
 			}
 		}

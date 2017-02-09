@@ -35,8 +35,8 @@ if(isset($_SESSION['zalogowano'])) header("Location: stronaglowna.php");
 		<div class="wew_napis_r">	<a href="rejestracja.php">Dołącz do nas!</a></div>
 		<div style="clear: both;"></div>
 		<form action="logowanie.php" method="post">
-			Numer konta:<br> <input type = "text" name="nr" placeholder="Twój nr konta"/><br />
-			Hasło: <br> <input type = "password" name="haslo" placeholder="••••••••"/><br />
+			Numer konta:<br> <input type = "text" name="nr" placeholder="Podaj nr konta"/><br />
+			Hasło: <br> <input type = "password" name="haslo" placeholder="Podaj hasło"/><br />
 			<input type="submit" value="Zaloguj!"/>
 		</form>
 		<?php

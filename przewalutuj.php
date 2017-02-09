@@ -38,38 +38,23 @@ $_SESSION['data_publikacji'] = $data;
 		echo "Witaj ".$_SESSION['imie']."!";
 		?>
 	</div>
-	<div class="lewa">
+	<div id="lewa">
 		<?php
-		echo '<div class="dane">Pan(i) </div>';
-		echo '<div class="dane_l">'.$_SESSION['imie'].' '.$_SESSION['nazwisko'].'</div></br>';
-		echo '<div style="clear: both;"></div>';
-		
-		echo '<div class="dane">numer </div>';
-		echo '<div class="dane_l">'.$_SESSION['nr_konta']."</div></br>";
-		echo '<div style="clear: both;"></div>';
-		
-			if(isset($_SESSION['nowy_stan'])) $_SESSION['stan_konta'] = $_SESSION['nowy_stan'];
-		
-		echo '<div class="dane">stan </div>';
-		echo '<div class="dane_l">'.$_SESSION['stan_konta'].'</div>';
-		echo '<div class="dane">PLN oraz </div>';
-		
-			if(isset($_SESSION['nowy_stan_euro'])) $_SESSION['stan_konta_euro'] = $_SESSION['nowy_stan_euro'];
-		echo '<div class="dane_l">'.$_SESSION['stan_konta_euro'].'</div>';
-		echo '<div class="dane">EUR</div>';
-		echo '<div style="clear: both;"></div>';
-
-		echo '<br><a href="wyloguj.php">Wyloguj</a></br>';
-		
+		echo "Numer konta: ".$_SESSION['nr_konta']."</br>";
+		echo "Imię: ".$_SESSION['imie']."</br>";
+		echo "Nazwisko: ".$_SESSION['nazwisko']."</br>";
+		echo "Stan konta: ".$_SESSION['stan_konta']."PLN</br></br>";
+		echo "Stan konta EURO: ".$_SESSION['stan_konta_euro']."</br></br>";
+		echo '<a href="wyloguj.php">Wyloguj się!</a></br>';
+		echo '<a href="historia.php">Zobacz historię przelewów!</a>';
 		
 		$data = $_SESSION['data_publikacji'];
 		$euro = $_SESSION['euro'];
 		?>
 	</div>
-	<div class="prawa">
-		<div class="wew_napis_l">Przewalutowanie!</div>
-		<div style="clear: both;"></div>
+	<div id="prawa">
 		Kurs EURO z dnia: <?php echo $data.": "."<b>".$euro."</b>";  ?></br></br>
+		Przewalotowanie!</br>
 		<form action = "przewalutowanie.php" method="post">
 			Podaj kwotę: <input type="text" name="kwota"/></br>
 			PLN => EUR <input type="radio" name="typ_przewalutowania" value="pte"/></br>
