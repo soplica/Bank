@@ -28,7 +28,7 @@ if(isset($_SESSION['zalogowano'])) header("Location: stronaglowna.php");
 <body>
 <div id="main">
 	<div style="text align: center;">
-		<h1>* SUPER BANK V.1.01 *	</h1>
+		<h1>* SUPER BANK V.1.0 *	</h1>
 	</div>
 	<div class="lewa">
 		<div class="wew_napis_l">Logowanie</div>
