@@ -1,0 +1,151 @@
+body
+{
+	background-image: url("seigaiha.png");
+	color: black;
+	font-size: 20px;
+	font-family: "Times New Roman";
+	font-style: Italic;
+}
+
+#main
+{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header
+{
+	margin-top: 20px;
+	text-align: left;
+	font-size:35px;
+	padding-bottom:20px;
+}
+
+.lewa
+{
+	margin-left: 20px;
+	float: left;
+	width: 394px;
+	padding: 10px;
+	border-top: 2px grey solid;
+	border-left: 2px grey solid;
+	margin-right: 10px;
+	text-align: left;
+	font-size: 18px;
+}
+
+	.wew_napis_l
+	{
+		font-size: 34px;
+		float: left;
+	}
+
+	.wew_napis_r
+	{
+		width: 50%;
+		text-align:right;
+		margin-top: 10px;
+		font-size: 21px;
+		color: red;
+		float: left;
+	}
+	
+	.dane_l
+	{
+		float:left;
+		font-size: 29px;
+	}
+	
+	.dane
+	{
+		float: left;
+		font-size: 15px;
+		margin-top: 10px;
+		padding: 4px;
+	}
+
+a
+{
+	text-decoration: none;
+	color: #382866;
+}
+
+.prawa
+{
+	margin-right: 20px;
+	float: left;
+	width: 394px;
+	padding: 10px;
+	min-height: 250px;
+	border-bottom: 2px grey solid;
+	border-right: 2px grey solid;
+	margin-left: 10px;
+	text-align: left;
+}
+
+
+
+#wynik
+{
+	color: #59295e;
+}
+
+
+.przycisk
+{
+	width: 160px;
+	height: 55px;
+	margin-left: 20px;
+	margin-right: 15px;
+	margin-top: 35px;
+	text-align: center;
+	border-top: 1px grey solid;
+	border-left: 1px grey solid;
+	color: black;
+	float: left;
+}
+
+.potwierdzenie
+{
+	font-size: 27px;
+	text-align: center;
+	margin-top: 7px;
+}
+
+#historia
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	min-height: 700px;
+	background-color: lightgray;
+	text-align: center;
+	padding: 30px;
+}
+
+#window
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	min-height: 500px;
+	width: 350px;
+	border: 2px solid;
+	text-align: center;
+	padding: 25px;
+}
+
+.blad
+{
+	color: blue;
+	font-size: 14px;
+}
+
+
+
+#footer
+{
+	text-align: center;
+	margin-top: 200px;
+}
