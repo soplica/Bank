@@ -26,7 +26,7 @@ if(!isset($_SESSION['zalogowano'])) header('Location: index.php');
 		$zapytanie = $polaczenie->query("SELECT * FROM transakcje_walutowe WHERE idklienta = $id_klienta ORDER BY data DESC");
 		$ilosc_wynikow = $zapytanie->num_rows;
 		
-		echo '<table border="1px"><tr><td width="40px">ID</td>	<td width="80px">Data</td>	<td width="70px">Kwota</td>	<td width="70px">Saldo PLN przed transakcją</td>		<td width="70px">Saldo PLN po transakcji</td>		<td width="70px">Saldo EUR przed transakcją</td>	<td width="70px">Saldo EUR po transakcji</td>	<td width="70px">Kurs EUR</td><td width="80px">Typ</td></tr></br>';
+		echo '<table><tr style="background-color: #f7d2d5"><td width="40px">ID</td>	<td width="80px">Data</td>	<td width="70px">Kwota</td>	<td width="70px">Saldo PLN przed transakcją</td>		<td width="70px">Saldo PLN po transakcji</td>		<td width="70px">Saldo EUR przed transakcją</td>	<td width="70px">Saldo EUR po transakcji</td>	<td width="70px">Kurs EUR</td><td width="80px">Typ</td></tr></br>';
 		
 		for($i=0; $i<$ilosc_wynikow; $i++)
 		{
@@ -41,15 +41,19 @@ if(!isset($_SESSION['zalogowano'])) header('Location: index.php');
 		$saldo_euro_po = $dane['saldo_euro_po'];
 		$kurs = $dane['kurs_euro'];
 		
+		if($id_transakcji%2==0) $color = '#ede8f4';
+		else $color = '#f7f7f7';
+		
+		
 			if($saldo_pln_przed>$saldo_pln_po)
 			{
 			
-				echo "<tr><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota PLN</td><td>$saldo_pln_przed</td><td>$saldo_pln_po</td><td>$saldo_euro_przed</td><td>$saldo_euro_po</td><td>$kurs</td><td>PLN->EUR</td></tr>";
+				echo "<tr style=\"background-color:".$color.";\"><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota PLN</td><td>$saldo_pln_przed</td><td>$saldo_pln_po</td><td>$saldo_euro_przed</td><td>$saldo_euro_po</td><td>$kurs</td><td>PLN->EUR</td></tr>";
 			}
 			
 			if($saldo_pln_przed<$saldo_pln_po)
 			{
-				echo "<tr><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota EUR</td><td>$saldo_pln_przed</td><td>$saldo_pln_po</td><td>$saldo_euro_przed</td><td>$saldo_euro_po</td><td>$kurs</td><td>EUR->PLN</td></tr>";
+				echo "<tr style=\"background-color:".$color.";\"><td>$id_transakcji</td><td>$data_transakcji</td><td>$kwota EUR</td><td>$saldo_pln_przed</td><td>$saldo_pln_po</td><td>$saldo_euro_przed</td><td>$saldo_euro_po</td><td>$kurs</td><td>EUR->PLN</td></tr>";
 				
 			}
 		}
