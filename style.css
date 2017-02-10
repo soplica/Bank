@@ -84,7 +84,11 @@ a
 	text-align: left;
 }
 
-
+#przelew
+{
+	text-align: left;
+	margin-left: 110px;
+}
 
 #wynik
 {
@@ -119,10 +123,17 @@ a
 	margin-right: auto;
 	width: 700px;
 	min-height: 700px;
-	background-color: lightgray;
 	text-align: center;
 	padding: 30px;
 }
+
+table
+{
+	border-collapse: collapse;
+	border-left: 2px solid grey;
+	border-top: 2px solid grey;
+}
+
 
 #window
 {
