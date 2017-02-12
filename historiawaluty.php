@@ -14,9 +14,7 @@ if(!isset($_SESSION['zalogowano'])) header('Location: index.php');
 <body>
 <div id="main">
 	<div id="header">
-		<?php
-		echo "Witaj ".$_SESSION['imie']."!";
-		?>
+		<a href="stronaglowna.php">Super Bank</a>
 	</div>
 	<div id="historia">
 		<?php

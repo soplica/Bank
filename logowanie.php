@@ -3,7 +3,7 @@ session_start();
 require_once "connect.php";
 //mysqli_query($polaczenie, "SET CHARSET utf8");
 //mysqli_query($polaczenie, "SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
-$nr_konta = $_POST['nr'];
+$email = $_POST['email'];
 $haslo = $_POST['haslo'];
 
 $polaczenie = @new mysqli($db_host,$db_user,$db_pass,$db_name);
@@ -16,7 +16,7 @@ if($polaczenie->connect_errno!=0)
 	}
 else
 	{
-		$rezultat = $polaczenie->query("SELECT * FROM klienci WHERE nr_konta='$nr_konta' AND haslo='$haslo'");
+		$rezultat = $polaczenie->query("SELECT * FROM klienci WHERE email='$email' AND haslo='$haslo'");
 		if($rezultat->num_rows > 0)
 			{
 				$wynik = $rezultat->fetch_assoc();

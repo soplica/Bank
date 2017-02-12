@@ -34,9 +34,7 @@ $_SESSION['data_publikacji'] = $data;
 <body>
 <div id="main">
 	<div id="header">
-		<?php
-		echo "Witaj ".$_SESSION['imie']."!";
-		?>
+		<a href="stronaglowna.php">Super Bank</a>
 	</div>
 	<div class="lewa">
 		<?php
